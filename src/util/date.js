@@ -1,4 +1,4 @@
-export const formatDate = (dateString) => {
+export const countDate = (dateString) => {
     const date = new Date(dateString);
     const now = new Date();
     const diffTime = now - date;
@@ -18,4 +18,12 @@ export const formatDate = (dateString) => {
     if (weeks < 5) return `${weeks} week${weeks > 1 ? 's' : ''} ago`;
     if (months < 12) return `${months} month${months > 1 ? 's' : ''} ago`;
     return `${years} year${years > 1 ? 's' : ''} ago`;
+};
+
+export const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
 };

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useJobs } from '../context/JobContext';
 import { getJobTypeColor } from '../util/color';
+import { formatDate } from '../util/date';
 import ArrowLeftIcon from '../components/icons/ArrowLeftIcon';
 import DocumentIcon from '../components/icons/DocumentIcon';
 import LocationIcon from '../components/icons/LocationIcon';
@@ -35,12 +36,10 @@ const JobDetailPage = () => {
         return null;
     }
 
-    const formatDate = (dateString) => {
-        return new Date(dateString).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        });
+    const navigateToCareerPage = () => {
+        if (job.careerPage) {
+            window.open(job.careerPage, '_blank', 'noopener,noreferrer');
+        }
     };
 
     return (
@@ -92,7 +91,12 @@ const JobDetailPage = () => {
                         </div>
 
                         <div className="flex flex-col items-start lg:items-end gap-4">
-                            <button className="btn-primary text-lg px-8 py-3">
+                            <button
+                                className={`btn-primary text-lg px-8 py-3 ${job.careerPage ? '' : 'opacity-50 cursor-not-allowed'}`}
+                                onClick={navigateToCareerPage}
+                                disabled={!job.careerPage}
+                                aria-label={`Apply for ${job.title} at ${job.company} (opens in new tab)`}
+                            >
                                 Apply Now
                             </button>
                             <div className="text-sm text-gray-500">
@@ -174,7 +178,6 @@ const JobDetailPage = () => {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
