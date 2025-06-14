@@ -1,3 +1,4 @@
+import SearchAndFilters from '../components/SearchAndFilters';
 import JobList from '../components/JobList';
 
 const HomePage = () => {
@@ -12,6 +13,8 @@ const HomePage = () => {
                     world. Start your career journey today.
                 </p>
             </div>
+
+            <SearchAndFilters />
 
             <JobList />
         </div>
