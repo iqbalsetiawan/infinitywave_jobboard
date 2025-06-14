@@ -8,7 +8,7 @@ import { getJobTypeColor } from '../util/color';
 const JobCard = ({ job }) => {
     return (
         <Link to={`/job/${job.id}`} className="block">
-            <div className="card p-6 hover:shadow-lg transition-all duration-200 cursor-pointer">
+            <div className="card p-6 hover:shadow-lg transition-all duration-200 cursor-pointer h-full flex flex-col justify-between">
                 <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                         <h3 className="text-lg font-semibold text-gray-900 mb-2 hover:text-primary-600 transition-colors">
