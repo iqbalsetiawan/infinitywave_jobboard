@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import DocumentIcon from './icons/DocumentIcon';
+import LocationIcon from './icons/LocationIcon';
+import ArrowRightIcon from './icons/ArrowRightIcon';
 import { formatDate } from '../util/date';
 import { getJobTypeColor } from '../util/color';
 
@@ -12,41 +15,11 @@ const JobCard = ({ job }) => {
                             {job.title}
                         </h3>
                         <div className="flex items-center text-gray-600 mb-2">
-                            <svg
-                                className="w-4 h-4 mr-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H3m2 0h4M9 7h6m-6 4h6m-6 4h6"
-                                />
-                            </svg>
+                            <DocumentIcon />
                             <span className="font-medium">{job.company}</span>
                         </div>
                         <div className="flex items-center text-gray-500 mb-3">
-                            <svg
-                                className="w-4 h-4 mr-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                />
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                />
-                            </svg>
+                            <LocationIcon />
                             <span>{job.location}</span>
                         </div>
                     </div>
@@ -67,19 +40,7 @@ const JobCard = ({ job }) => {
                 <div className="flex items-center justify-between">
                     <div className="flex items-center text-primary-600 text-sm font-medium">
                         View Details
-                        <svg
-                            className="w-4 h-4 ml-1"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5l7 7-7 7"
-                            />
-                        </svg>
+                        <ArrowRightIcon />
                     </div>
                 </div>
             </div>

@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useJobs } from '../context/JobContext';
-import { useEffect } from 'react';
 import { getJobTypeColor } from '../util/color';
+import ArrowLeftIcon from '../components/icons/ArrowLeftIcon';
+import DocumentIcon from '../components/icons/DocumentIcon';
+import LocationIcon from '../components/icons/LocationIcon';
 
 const JobDetailPage = () => {
     const { id } = useParams();
@@ -42,29 +45,15 @@ const JobDetailPage = () => {
 
     return (
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            {/* Back Button */}
             <Link
                 to="/"
                 className="inline-flex items-center text-primary-600 hover:text-primary-700 mb-6 transition-colors"
             >
-                <svg
-                    className="w-4 h-4 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 19l-7-7 7-7"
-                    />
-                </svg>
+                <ArrowLeftIcon />
                 Back to Jobs
             </Link>
 
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                {/* Header */}
                 <div className="p-8 border-b border-gray-200">
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                         <div className="flex-1">
@@ -74,42 +63,12 @@ const JobDetailPage = () => {
 
                             <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
                                 <div className="flex items-center text-gray-600">
-                                    <svg
-                                        className="w-5 h-5 mr-2"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H3m2 0h4M9 7h6m-6 4h6m-6 4h6"
-                                        />
-                                    </svg>
+                                    <DocumentIcon />
                                     <span className="font-medium text-lg">{job.company}</span>
                                 </div>
 
                                 <div className="flex items-center text-gray-500">
-                                    <svg
-                                        className="w-5 h-5 mr-2"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                        />
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                        />
-                                    </svg>
+                                    <LocationIcon />
                                     <span>{job.location}</span>
                                 </div>
                             </div>
@@ -143,10 +102,8 @@ const JobDetailPage = () => {
                     </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-8">
                     <div className="grid lg:grid-cols-3 gap-8">
-                        {/* Main Content */}
                         <div className="lg:col-span-2 space-y-8">
                             <section>
                                 <h2 className="text-xl font-semibold text-gray-900 mb-4">
@@ -182,7 +139,6 @@ const JobDetailPage = () => {
                             </section>
                         </div>
 
-                        {/* Sidebar */}
                         <div className="space-y-6">
                             <div className="card p-6">
                                 <h3 className="text-lg font-semibold text-gray-900 mb-4">

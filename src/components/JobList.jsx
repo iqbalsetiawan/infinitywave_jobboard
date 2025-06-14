@@ -2,6 +2,7 @@ import { useJobs } from '../context/JobContext';
 import JobCard from './JobCard';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
+import SearchIcon from './icons/SearchIcon';
 
 const JobList = () => {
     const { jobs, loading, error } = useJobs();
@@ -12,19 +13,7 @@ const JobList = () => {
     if (jobs.length === 0) {
         return (
             <div className="text-center py-12">
-                <svg
-                    className="mx-auto h-12 w-12 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                </svg>
+                <SearchIcon className="mx-auto h-12 w-12 text-gray-400" />
                 <h3 className="mt-4 text-lg font-medium text-gray-900">
                     No jobs found
                 </h3>
